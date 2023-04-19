@@ -1,6 +1,6 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-
+// FIGURE OUT HOW TO MAKE IT SHOW THE SELECTED CHARACTERS
 // Write password to the #password input
 function writePassword() {
   var length = prompt("Please enter the number of characters you would like. (Between 8-128)"); 
@@ -59,7 +59,10 @@ function writePassword() {
        + chars.low;
     }
 
-    for (let i = 0; i < length; i++) {
+    var rand = Math.floor(Math.random() * selectedChars.length);
+    password += selectedChars.charAt(rand);
+
+    for (let i = 1; i < length; i++) {
       var rand = Math.floor(Math.random() * selectedChars.length);
       password += selectedChars.charAt(rand);
     }
