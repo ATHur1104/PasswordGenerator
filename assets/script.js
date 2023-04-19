@@ -3,17 +3,17 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  var length = prompt("Please enter the number of characters you would like."); 
+  var length = prompt("Please enter the number of characters you would like. (Between 8-128)"); 
   if (length < 8 || length > 128) {
     alert("Please choose a number between 8 and 128");
     return;
   }
-  var characterType = prompt(`Please type with spaces ${break} "C" to add Capitalized letters ${break} "S" to add Symols ${break} "N" to add Numbers`);
-  if (characterType != "C" && "S" && "N" && "") {
-    alert("Please use spaces");
+  var characterType = prompt(`Please type with spaces "C" to add Capitalized letters "S" to add Symols "N" to add Numbers`);
+  if (!/^[CSN ]+$/.test(characterType)) {
+    alert("Please use C S and/or N");
     return;
   }
-  var password = generatePassword(length,);
+  var password = generatePassword(length, characterType);
   var passwordText = document.querySelector("#password");
 
   function generatePassword(length, characterType) {
@@ -25,11 +25,33 @@ function writePassword() {
     };
     var password = "";
     var selectedChars = "";
-    
+    if (characterType.includes("N")) {
+      selectedChars += chars.num;
+      selectedChars += chars.low;
+    }
+    if (characterType.includes("C")) {
+      selectedChars += chars.cap;
+      selectedChars += chars.low;
+    }
+    if (characterType.includes("S")) {
+      selectedChars += chars.sym;
+      selectedChars += chars.low;
+    }
+    if (characterType.includes("")) {
+      selectedChars += chars.low;
+    }
+    if (characterType.includes("N") && characterType.includes("C") && characterType.includes("S")){
+      selectedChars += chars.num;
+      selectedChars += chars.cap;
+      selectedChars += chars.sym;
+      selectedChars += chars.low;
+    }
+
+    selectedChars = selectedChars.join('');
 
     for (let i = 0; i < length; i++) {
-      var rand = Math.floor(Math.random() * chars.length);
-      password += chars[rand];
+      var rand = Math.floor(Math.random() * selectedChars.length);
+      password += selectedChars.charAt(rand);
     }
   return password;
 }
