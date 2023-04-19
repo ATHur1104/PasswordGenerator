@@ -8,12 +8,25 @@ function writePassword() {
     alert("Please choose a number between 8 and 128");
     return;
   }
-  var password = generatePassword(length);
+  var characterType = prompt(`Please type with spaces ${break} "C" to add Capitalized letters ${break} "S" to add Symols ${break} "N" to add Numbers`);
+  if (characterType != "C" && "S" && "N" && "") {
+    alert("Please use spaces");
+    return;
+  }
+  var password = generatePassword(length,);
   var passwordText = document.querySelector("#password");
 
-  function generatePassword(length) {
-    const chars = "0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  function generatePassword(length, characterType) {
+    const chars = {
+      num:"0123456789",
+      low:"abcdefghijklmnopqrstuvwxyz",
+      sym:"!@#$%^&*()",
+      cap:"ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    };
     var password = "";
+    var selectedChars = "";
+    
+
     for (let i = 0; i < length; i++) {
       var rand = Math.floor(Math.random() * chars.length);
       password += chars[rand];
