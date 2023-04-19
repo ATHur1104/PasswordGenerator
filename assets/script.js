@@ -10,7 +10,7 @@ function writePassword() {
   }
   var characterType = prompt(`Please type with spaces "C" to add Capitalized letters "S" to add Symols "N" to add Numbers`);
   if (!/^[CSN ]+$/.test(characterType)) {
-    alert("Please use C S and/or N");
+    alert("Please use C S and/or N, Please remove spaces");
     return;
   }
   var password = generatePassword(length, characterType);
@@ -26,8 +26,7 @@ function writePassword() {
     var password = "";
     var selectedChars = "";
     if (characterType.includes("N")) {
-      selectedChars += chars.num;
-      selectedChars += chars.low;
+      selectedChars += chars.num + chars.low;
     }
     if (characterType.includes("C")) {
       selectedChars += chars.cap;
@@ -46,8 +45,6 @@ function writePassword() {
       selectedChars += chars.sym;
       selectedChars += chars.low;
     }
-
-    selectedChars = selectedChars.join('');
 
     for (let i = 0; i < length; i++) {
       var rand = Math.floor(Math.random() * selectedChars.length);
