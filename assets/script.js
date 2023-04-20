@@ -59,6 +59,7 @@ function writePassword() {
        + chars.low;
     }
 
+    
     var rand = Math.floor(Math.random() * selectedChars.length);
     password += selectedChars.charAt(rand);
 
