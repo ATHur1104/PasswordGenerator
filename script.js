@@ -1,7 +1,4 @@
-// Assignment Code
 var generateBtn = document.querySelector("#generate");
-// FIGURE OUT HOW TO MAKE IT SHOW THE SELECTED CHARACTERS
-// Write password to the #password input
 function writePassword() {
   var length = prompt("Please enter the number of characters you would like. (Between 8-128)"); 
   if (isNaN(length) || length < 8 || length > 128) {
@@ -85,5 +82,4 @@ function writePassword() {
       }
       return true;
     }
-// Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
