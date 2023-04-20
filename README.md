@@ -13,13 +13,13 @@
 
 # Screenshots
 ## Landing Page
-![Landing Page of Website](/PasswordGenerator/ReadMeAssets/Landing%20Shot.jpg)
+![Landing Page of Website](./ReadMeAssets/Landing%20Shot.jpg)
 ## Length Prompt
-![Length of password prompt](/PasswordGenerator/ReadMeAssets/promptLength.jpg)
+![Length of password prompt](./ReadMeAssets/promptLength.jpg)
 ## Type of characters Prompt
-![Type of characters to generate prompt](/PasswordGenerator/ReadMeAssets/promptType.jpg)
+![Type of characters to generate prompt](./ReadMeAssets/promptType.jpg)
 ## Results Example
-![Example results of generated password](/PasswordGenerator/ReadMeAssets/result.jpg)
+![Example results of generated password](./ReadMeAssets/result.jpg)
 
 # Technologies Used
 ## This password generator was built using HTML, CSS, and JavaScript.
