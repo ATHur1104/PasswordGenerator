@@ -63,16 +63,28 @@ function writePassword() {
 
     var password = "";
     console.log(password);
+    while (!matchCheck(password, characterType)) {
+      password = "";
     for (let i = 0; i < length; i++) {
       var char = selectedChars.charAt(Math.floor(Math.random() * selectedChars.length));
       password += char;
     }
-    if (password.includes(!characterType)) {
-      var char = se
-    } else
+    }
     return password;
+    }
 
-}
+    function matchCheck(password, characterType) {
+      if (characterType.includes("N") && !password.match(/[0-9]/)) {
+        return false;
+      }
+      if (characterType.includes("C") && !password.match(/[A-Z]/)) {
+        return false;
+      }
+      if (characterType.includes("S") && !password.match(/[!@#$%^&*()]/)) {
+        return false;
+      }
+      return true;
+    }
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
