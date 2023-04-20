@@ -4,7 +4,7 @@
 
 # Usage
 
-## To use the password generator, click the "Generate Password" button. You will be prompted to enter the length of the password (between 8-128) and to select the types of characters to include (Capital letters, Symbols, and Numbers). Once the selections have been made the password generator will create a password that meets the criteria.
+## To use the password generator, click the "Generate Password" button. You will be prompted to enter the length of the password (between 8-128) and to select the types of characters to include by adding the corresponding letters to the prompt(Capital letters, Symbols, and Numbers). Once the selections have been made the password generator will create a password that meets the criteria.
 
 # Features
 * Randomly generates a password based on user-specified criteria
